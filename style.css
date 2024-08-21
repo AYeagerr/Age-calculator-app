@@ -1,0 +1,275 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base CSS Variables */
+:root {
+  /* Primary Colors */
+  --color-purple: hsl(259, 100%, 65%);
+  --color-light-red: hsl(0, 94%, 79%);
+
+  /* Neutral Colors */
+  --color-white: hsl(0, 0%, 100%);
+  --color-off-white: hsl(0, 0%, 94%);
+  --color-light-grey: hsl(0, 0%, 86%);
+  --color-smokey-grey: hsl(0, 1%, 44%);
+  --color-off-black: hsl(0, 0%, 8%);
+
+  /* Typography */
+  --font-family-poppins: "Poppins", sans-serif;
+  --font-size-body: 32px;
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+  --font-weight-extra-bold: 800;
+}
+
+body {
+  font-family: var(--font-family-poppins);
+  background-color: var(--color-light-grey);
+  height: 100svh;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.container .card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  height: 60%;
+  background-color: var(--color-white);
+  border-radius: 20px;
+  border-bottom-right-radius: 200px;
+}
+
+/* Birth Date Form */
+.container .card .birthDate {
+  display: flex;
+  width: 80%;
+  margin: 20px 0;
+}
+
+.container .card .birthDate form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container .card .birthDate form div {
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+}
+
+.container .card .birthDate form div label {
+  font-size: 15px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-smokey-grey);
+  margin-bottom: 5px;
+}
+
+.container .card .birthDate form div input {
+  width: 80%;
+  border: 1px solid var(--color-light-grey);
+  border-radius: 5px;
+  padding: 10px;
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-extra-bold);
+}
+
+.container .card .birthDate form div input:focus {
+  outline: none;
+  border: 1px solid var(--color-purple);
+  caret-color: var(--color-purple);
+}
+
+
+
+
+/* Error styling */
+input.error {
+  border: 2px solid #FF4D4D; /* Red border */
+  background-color: inherit; /* Keep the background as it is */
+}
+
+/* Container for error messages */
+.error-container {
+  position: relative;
+  width: 100%; /* Make sure it aligns with the input field */
+}
+
+/* Error message styling */
+.error-message {
+  color: #D80027; /* Dark red text color */
+  font-size: 12px;
+  display: none; /* Hide by default */
+  position: absolute;
+  top: 100%; /* Position it below the input field */
+  left: 0;
+  white-space: nowrap; /* Ensure the error message is on one line */
+  margin-top: 5px;
+}
+
+/* Error styling for label */
+.error-container label {
+  color: #FF4D4D; /* Red color for label when input has error */
+}
+
+
+/* Line Under the Form */
+.container .card .line {
+  margin: 20px 0;
+  width: 80%;
+  height: 2px;
+  background-color: var(--color-light-grey);
+  position: relative;
+}
+
+/* Circle Button */
+.circle-btn {
+  width: 60px;
+  height: 60px;
+  background-color: var(--color-purple);
+  border: none;
+  border-radius: 50%;
+  position: absolute;
+  right: -12px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.circle-btn img {
+  width: 30px;
+}
+
+.circle-btn:hover {
+  background-color: var(--color-off-black);
+}
+
+/* Output */
+.container .card .output {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  width: 80%;
+}
+
+.number {
+  font-size: 60px;
+  font-weight: var(--font-weight-extra-bold);
+  font-style: italic;
+  color: var(--color-purple);
+  margin-bottom: 10px;
+}
+
+.years,
+.months,
+.days {
+  font-size: 60px;
+  font-weight: var(--font-weight-extra-bold);
+  font-style: italic;
+  color: var(--color-off-black);
+  margin-bottom: 10px;
+}
+
+/* Attribution */
+footer {
+  padding: 20px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.attribution {
+  color: #555;
+}
+
+.attribution a {
+  color: var(--color-purple);
+  text-decoration: none;
+}
+
+.attribution a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .container .card {
+    width: 80%;
+    height: 70%;
+  }
+
+  .container .card .birthDate form div input{
+    padding: 20px;
+  }
+
+  .container .card .line{
+    margin-top: 50px;
+  }
+
+  .container .card .output {
+    width: 80%;
+  }
+
+  .circle-btn {
+    right: 0;
+  }
+
+  .number {
+    font-size: 40px;
+  }
+
+  .years,
+  .months,
+  .days {
+    font-size: 40px;
+  }
+
+  .error-message {
+    font-size: 10px;
+    text-wrap: wrap;
+    
+  }
+
+  @media (max-width: 768px) {
+  .circle-btn {
+    width: 50px;
+    height: 50px;
+    left: 50%; /* Keep centered horizontally */
+    top: 50%; /* Keep centered vertically */
+    transform: translate(-50%, -50%);
+  }
+}
+
+  footer {
+    font-size: 12px;
+  }
+
+  .container .card .birthDate form div label {
+    font-size: 12px;
+  }
+
+  .container .card .birthDate form div input {
+    font-size: 12px;
+  }
+
+  .container .card .birthDate form div {
+    margin-right: 10px;
+  }
+}
